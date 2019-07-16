@@ -1,0 +1,26 @@
+name:                HackVM-to-MiMa
+version:             1.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/mkiesinger/HackVM-to-MiMa
+license:             MIT
+license-file:        LICENSE
+author:              Manuel Killinger
+maintainer:          uleja@student.kit.edu
+copyright:           2019 Manuel Killinger
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.10
+extra-source-files:  README.md
+
+executable HackVM-to-MiMa
+  hs-source-dirs:      src
+  main-is:             Main.hs
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5
+                     , split
+                     , containers
+                     , directory
+                     , MissingH
+                     , time
+                     , deepseq
