@@ -1,0 +1,49 @@
+function Main.main 2
+push constant 0
+pop local 0
+push constant 7
+call Main.fibonacci 1
+pop local 1
+push constant 16384
+push local 0
+add
+push local 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+return
+function Main.fibonacci 2
+push argument 0
+push constant 1
+lt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 0
+return
+label IF_FALSE0
+push argument 0
+push constant 1
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push constant 1
+return
+label IF_FALSE1
+push argument 0
+push constant 1
+sub
+call Main.fibonacci 1
+pop local 0
+push argument 0
+push constant 2
+sub
+call Main.fibonacci 1
+pop local 1
+push local 0
+push local 1
+add
+return
