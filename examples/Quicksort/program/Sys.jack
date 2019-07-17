@@ -1,0 +1,17 @@
+class Sys {
+
+    /**
+    * Sys.init() is part of the operating system and the first function that is called after the bootstrap.
+    */
+    function void init() {
+      do Main.main();
+      do Sys.halt();
+      return;
+    }
+
+    function void halt() {
+      while(true) {}
+      return;
+    }
+
+}

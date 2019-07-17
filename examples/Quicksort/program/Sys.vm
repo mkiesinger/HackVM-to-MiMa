@@ -1,0 +1,17 @@
+function Sys.init 0
+call Main.main 0
+pop temp 0
+call Sys.halt 0
+pop temp 0
+push constant 0
+return
+function Sys.halt 0
+label WHILE_EXP0
+push constant 0
+not
+not
+if-goto WHILE_END0
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+return

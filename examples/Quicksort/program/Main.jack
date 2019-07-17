@@ -1,0 +1,80 @@
+class Main {
+
+    /**
+    * Sorts an Array of 20 elements at memory location 16384,
+    * which is the beginning of the memory mapped screen.
+    */
+    function void main() {
+      var int SCREEN;
+
+      let SCREEN = 16384;
+
+      let SCREEN[0] = 18;
+      let SCREEN[1] = 6;
+      let SCREEN[2] = -1;
+      let SCREEN[3] = 1;
+      let SCREEN[4] = 13;
+      let SCREEN[5] = 11;
+      let SCREEN[6] = -5;
+      let SCREEN[7] = -8;
+      let SCREEN[8] = 3;
+      let SCREEN[9] = 7;
+      let SCREEN[10] = -5;
+      let SCREEN[11] = -6;
+      let SCREEN[12] = 15;
+      let SCREEN[13] = 15;
+      let SCREEN[14] = 2;
+      let SCREEN[15] = -3;
+      let SCREEN[16] = 16;
+      let SCREEN[17] = 2;
+      let SCREEN[18] = 11;
+      let SCREEN[19] = 10;
+
+      do Main.quickSort(SCREEN, 0, 19);
+      return;
+    }
+
+    /**
+    * Sorts the array a using between lo and hi using quicksort. This version is tail recursion optimized.
+    */
+    function void quickSort(int a, int lo, int hi) {
+
+      var int l, r, i, j, tmp, v;
+      let l = lo;
+      let r = hi;
+
+      while (l < r) {
+        let i = l;
+        let j = r;
+        let v = a[l];                     // Pivot is first element
+
+        while (~(i > j)) {                // Partitioning
+          while (a[i] < v) {
+            let i = i + 1;
+          }
+
+          while (v < a[j]) {
+            let j = j - 1;
+          }
+
+          if (~(i > j)) {
+            let tmp = a[i];
+            let a[i] = a[j];
+            let a[j] = tmp;
+            let i = i + 1;
+            let j = j - 1;
+          }
+        }
+
+        if (i + i < l + r) {              // Recurse on smaller subproblem
+          do Main.quickSort(a, l, j);
+          let l = i;
+        } else {
+          do Main.quickSort(a, i, r);
+          let r = j;
+        }
+
+      }
+      return;
+    }
+}
