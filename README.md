@@ -7,7 +7,7 @@ A program to translate the Hack Virtual Machine language to MiMa Assembly. The H
 This program is part two of a project of mine, creating a fully functional CPU on an FPGA. To run some proper programs on the [FPGA MiMa](https://github.com/mkiesinger/mimaFPGA) I needed a compiler that can transform high level programs to machine code. I decided to use [TECS](https://www.nand2tetris.org/) as inspiration. In the book Nisan and Shocken explain how to compile a high level Java like language Jack first to an intermediate representation, a virtual stack based processor, and then translate that code into assembly. Instead of using the in the book described Hack CPU architecture, I decided to translate the VM to MiMa assembly, thus being able to have any program written in Jack run on the MiMa.
 I chose MiMa over an own design, because there already exist good and fast simulators for the MiMa architecture written by students from the KIT, and it might help others to understand how the whole process works.
 
-## Workflow:
+## How to Use:
 - Download the [TECS Software Suite](https://www.nand2tetris.org/software)
 - Write your own program in Jack or take any project from [GitHub](https://github.com/search?o=desc&q=nand2tetris&s=stars&type=Repositories)
 - Compile the classes using the [TECS provided compiler](https://www.nand2tetris.org/software)  from *\nand2tetris\tools*
